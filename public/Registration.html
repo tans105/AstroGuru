@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<head>
+		<meta charset="UTF-8">
+		<title>AstroGuru</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<link rel="stylesheet" type="text/css" href="/css/styleprof.css">
+		<script type="text/javascript">
+
+			function isValidEmailId(email){
+
+				var atpos=email.indexOf("@");
+				var dotpos=email.lastIndexOf(".");
+				if(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length){
+					
+					return false;
+				}
+				return true;
+			}
+	// function doRegister() {
+	// 	//var fname = document.getElementById("fname").value;
+	// 	//var lname = document.getElementById("lname").value;
+	// 	//var email = document.getElementById("email").value;
+	// 	//var pass = document.getElementById("password").value;
+	// 	if(!document.getElementById("fname").value.toString()){
+	// 		alert("you missed First Name")
+	// 		return false;
+	// 	}
+	// 	if(!document.getElementById("lname").value.toString()){
+	// 		alert("you missed Last Name")
+	// 		return false;
+	// 	}
+	// 	if(!document.getElementById("email").value.toString()){
+
+	// 		alert("you missed email")
+	// 		return false;
+	// 	}
+	// 	if(!document.getElementById("pass").value.toString()){
+	// 		alert("you missed password")
+	// 		return false;
+	// 	}
+
+	// }
+
+	function validate() {
+		if(myform.fname.value.length==0)
+		{
+			document.getElementById('errfname').innerHTML="Please enter a first name";
+			return false;
+		}
+		else
+			if(myform.lname.value.length==0)
+			{
+				document.getElementById('errlname').innerHTML="Please enter a Last Name";
+				return false;
+			}
+			else
+				if(myform.email.value.length==0)
+				{
+					document.getElementById('erremail').innerHTML="email missing";
+					return false;
+				}
+				else
+					if(!isValidEmailId(myform.email.value)){
+						document.getElementById('erremail').innerHTML="email incorrect format";
+						return false;
+
+					}
+					if(myform.password.value.length==0)
+					{
+						document.getElementById('errpassword').innerHTML="Please enter a password";
+						return false;
+					}
+				}
+			</script>
+		</head>
+
+		<body >
+
+			<div class="wrapper">
+
+				<div class="neon">A s t r o G u r u</div>
+				<div class="neonsmall">Believe in Destiny</div>
+
+
+
+				<div id="wrapper">
+					<ul class="nav nav-pills" style="  margin: auto;
+		width: 50%;
+
+		padding: 10px;"  >
+		<li role="presentation" style="font-family: initial; font-size: x-large; padding-left: 180px;">
+			<a href="/">Home</a>
+		</li>
+		<li role="presentation" style="font-family: initial; font-size: x-large;">
+			<a href="/about.html">About
+				Astroguru</a>
+			</li>
+
+		</ul>
+						<div class="c2">
+							<div class="containerreg">
+
+								<br>
+
+								<form name="myform" class="form" action="/" method="post"
+								onsubmit="return validate()">
+								<input type="text" placeholder="First Name" name="fname"
+								id="fname" ><div id="errfname"  style="color: red;">   </div>
+								<input type="text" placeholder="Last Name"
+								name="lname" id="lname" > <div id="errlname" style="color: red;">   </div>
+								<input type="text"
+								placeholder="Email" name="email" id="email" ><div id="erremail" style="color: red;">   </div>
+								<input
+								type="password" placeholder="Password" name="password" id="pass" ><div id="errpassword" style="color: red;" >   </div>
+
+								<br>
+								<button type="submit" id="register-button" value="POST">Register</button>
+								<br>
+
+								
+							</form>
+
+
+						</div>
+					
+					</div>
+
+				</div>
+
+
+			</div>
+
+
+
+
+		</body>
+		</html>

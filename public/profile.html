@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>AstroGuru</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</head>
+
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/styleprof.css">
+<script type="text/javascript">
+
+	function isValidEmailId(email){
+
+		var atpos=email.indexOf("@");
+		var dotpos=email.lastIndexOf(".");
+		if(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length){
+
+			return false;
+		}
+		return true;
+	}
+
+	function validate() {
+		
+		
+		
+				if(myform.email.value.length==0)
+				{
+					document.getElementById('erremail').innerHTML="email missing";
+					return false;
+				}
+				else
+					if(!isValidEmailId(myform.email.value)){
+						document.getElementById('erremail').innerHTML="email incorrect format";
+						return false;
+
+					}
+				
+				if(myform.query.value.length==0)
+					{
+						document.getElementById('errquery').innerHTML="Please have some question";
+						return false;
+					}
+				}
+			</script>
+		</head>
+
+		<body >
+
+			<div class="wrapper">
+
+				<div class="neon">A s t r o G u r u</div>
+				<div class="neonsmall">Believe in Destiny</div>
+				<div>
+								<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-size: 20px; ">
+						<tr>
+							<td height="38" colspan="2" class="top" style="padding-top: 40px;">
+							&nbsp;&nbsp;I&nbsp;&nbsp;<a href="index.html">Home </a>
+								&nbsp;&nbsp;I&nbsp;&nbsp;<a href="about-astrologer.html">About Astrologer </a>&nbsp;&nbsp;I&nbsp;&nbsp;
+								<a href="profile.html"> Ask a Question</a>&nbsp;&nbsp;I&nbsp;&nbsp; 
+								<a href="zodiac.html">Check Your zodiac</a>&nbsp;&nbsp;I&nbsp;&nbsp;
+					<!-- <a href="birth-time-rectification.php"> Birth Time Rectification </a>&nbsp;&nbsp;I&nbsp;&nbsp;  
+					<a href="saade-sati-report.php">Saade Sati Report</a>&nbsp;&nbsp;  I&nbsp;&nbsp;  <a  href="manglik-report.php">Manglik Report </a>-->
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="c2">
+		<div class="containerques">
+
+			<br>
+
+			<form name="myform" class="form" action="/mail" enctype="multipart/form-data" method="post"
+			onsubmit="return validate()">
+			<input type="text"
+			placeholder="Email" name="email" id="email" ><div id="erremail" style="color: red;">   </div>
+			<input
+			type="tel" placeholder="Mobile Number(Optional)" name="mobile" id="mobile" maxlength="10">
+			<input
+			type="text" placeholder="Query" name="query" id="query" style="width: 600px;" maxlength="140"><div id="errquery" style="color: red;">   </div>
+
+			
+			<input type="file" style="width: 300px;" id="file" name="file">
+			<br>
+			<div  style="color: red;">   
+			<li style="color:#A52020 ;font-size: x-large;">Please make sure questions are relevant.</li>
+			<li style="color:#A52020 ;font-size: x-large;">Question that does not deal with Astrology will not be entertained.</li>
+			</div>
+			<button type="submit" id="register-button" value="Send">Send</button>
+			<br>
+
+
+		</form>
+
+
+	</div>
+
+</div>
+</div>
+</body>
+</html>
