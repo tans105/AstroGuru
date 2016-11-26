@@ -1,10 +1,5 @@
--Removed login and registration 
--UI changes
+HTML based web application based on Astrology.
 
+Server handing is done using Node JS
 
-To do
-
--Zodiac page
--attachment
--test
 
